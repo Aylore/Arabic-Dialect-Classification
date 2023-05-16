@@ -12,7 +12,7 @@ def get_data() -> pd.DataFrame:
     conn.close()
     return df
 
-def get_data_csv() -> pd.DataFrame():
+def get_data_csv() -> pd.DataFrame():                                      ##### this function is bugged
     ls = [row[1:] for row in csv.reader(open("./data/dialects.csv"))]
     df = pd.DataFrame(ls)
     df.columns = df.iloc[0]
