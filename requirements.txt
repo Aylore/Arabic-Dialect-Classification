@@ -16,8 +16,9 @@
 
 
 
+numpy
 joblib==1.1.1
-pandas==1.5.3
+pandas
 scikit_learn==1.2.2
 tensorflow==2.10.0
 tensorflow_addons==0.20.0
@@ -30,6 +31,6 @@ pyarabic==0.6.14
 git+https://github.com/aub-mind/arabert
 emoji
 sentencepiece==0.1.96
-#transformers
-#accelerate
+# transformers
+accelerate
 git+https://github.com/huggingface/accelerate
