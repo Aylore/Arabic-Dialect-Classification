@@ -6,6 +6,9 @@ model_name = 'aubmindlab/bert-base-arabertv02-twitter'
 
 max_len = 90
 
+label_map = {'LY': 0, 'MA': 1, 'EG': 2, 'LB': 3, 'SD': 4}
+
+
 
 training_args = TrainingArguments( 
     output_dir= "../models/train_hf",    
