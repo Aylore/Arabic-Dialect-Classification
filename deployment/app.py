@@ -46,11 +46,11 @@ def predict_label(text):
     # Dummy prediction logic
     model_prediction = np.random.choice(["SD","LB","EG","MA", "LY"]) #Put model here
     
-    dict_ = {"SD":"Sudanese - سودانية",
-             "LB":"Libyan - ليبية",
-             "EG":"Egyptian - مصرية",
-             "MA":"moroccian - مغربية",
-             "LY":"Lebanese -لبنانية"}
+    dict_ = {"SD":"Sudanese - سودانية 🇸🇩",
+             "LB":"Libyan - ليبية 🇱🇾",
+             "EG":"Egyptian - مصرية 🇪🇬",
+             "MA":"moroccian - مغربية 🇲🇦",
+             "LY":"Lebanese -لبنانية 🇱🇧"}
     
     SD_score = np.random.rand() * 100
     LB_score = np.random.rand() * 100
