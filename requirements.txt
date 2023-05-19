@@ -15,4 +15,5 @@ transformers accelerate
 accelerate==0.4.0 --upgrade
 fastapi
 python-multipart
+uvicorn
 
