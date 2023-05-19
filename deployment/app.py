@@ -7,8 +7,8 @@ import numpy as np
 app = FastAPI()
 
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="deployment/static"), name="static")
+templates = Jinja2Templates(directory="deployment/templates")
 
 
 @app.get("/")
@@ -38,4 +38,4 @@ def predict_label(text):
     
     return dict_[model_prediction]
 
-# to run the app: uvicorn app:app --reload
+# to run the app: uvicorn deployment.app:app --reload
