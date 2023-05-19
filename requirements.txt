@@ -34,3 +34,7 @@ sentencepiece==0.1.96
 # transformers
 accelerate
 git+https://github.com/huggingface/accelerate
+
+fastapi
+python-multipart
+uvicorn
