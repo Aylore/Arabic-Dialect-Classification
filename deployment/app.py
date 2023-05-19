@@ -30,12 +30,12 @@ def predict_label(text):
     # Dummy prediction logic
     model_prediction = np.random.choice(["SD","LB","EG","MA", "LY"]) #Put model here
     
-    dict_ = {"SD":"سودانية",
-             "LB":"ليبية",
-             "EG":"مصرية",
-             "MA":"مغربية",
-             "LY":"لبنانية"}
+    dict_ = {"SD":"Sudanese - سودانية",
+             "LB":"Libyan - ليبية",
+             "EG":"Egyptian - مصرية",
+             "MA":"moroccian - مغربية",
+             "LY":"Lebanese -لبنانية"}
     
-    return f"اللهجة: {dict_[model_prediction]}"
+    return dict_[model_prediction]
 
 # to run the app: uvicorn app:app --reload
