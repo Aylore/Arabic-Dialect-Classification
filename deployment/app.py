@@ -7,8 +7,8 @@ import numpy as np
 app = FastAPI()
 
 
-app.mount("/static", StaticFiles(directory="deployment_copy/static"), name="static")
-templates = Jinja2Templates(directory="deployment_copy/templates")
+app.mount("/static", StaticFiles(directory="deployment/static"), name="static")
+templates = Jinja2Templates(directory="deployment/templates")
 
 
 @app.get("/")
