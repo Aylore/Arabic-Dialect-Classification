@@ -7,11 +7,24 @@
 </head>
 <body>
     <h3>Model Prediction</h3>
-    <form action="/predict" method="post">
+    <form action="/" method="post">
         <label for="text">Enter Text:</label>
-        <input type="text" name="text" id="text">
-        <button type="submit" class="submit-btn">Predict</button>
+        <input type="text" name="text" id="text" placeholder="Enter text" value="{{ text }}" required>
+        <div class="button-container">
+            <button type="submit" class="submit-btn">Predict</button>
+            {% if label %}
+            <a href="/clear/"><button type="button">Clear</button></a>
+            {% endif %}
+        </div>
     </form>
-    <script src="{{ url_for('static', path='/scripts.js') }}"></script>
 </body>
+{% if label %}
+    <body>
+        <h4>Prediction: {{ label }}</h4>
+    </body>
+{% else %}
+<body>
+    <h4>ㅤ</h4>
+</body>
+{% endif %}
 </fieldset>

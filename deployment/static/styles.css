@@ -28,3 +28,7 @@ body {
  fieldset {
    padding: 20px 40px;
  }
+ button-container {
+  display: flex;
+  gap : 1
+ }
