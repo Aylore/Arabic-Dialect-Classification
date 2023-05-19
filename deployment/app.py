@@ -37,3 +37,5 @@ def predict_label(text):
              "LY":"لبنانية"}
     
     return f"اللهجة: {dict_[model_prediction]}"
+
+# to run the app: uvicorn app:app --reload
