@@ -5,6 +5,3 @@
 - [ ] Solve Bug in read data from csv
 - [ ] Add pretrained Arabert checkpoints
 - [ ] Add predict function for Arabert model
-
-
-
