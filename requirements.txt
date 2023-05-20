@@ -13,9 +13,14 @@
 # transformers accelerate
 # git+https://github.com/huggingface/accelerate
 # accelerate==0.4.0 #--upgrade
+-e git clone https://github.com/aub-mind/arabert
 
-
-
+-e git+https://github.com/huggingface/accelerate
+fastapi
+python-multipart
+emoji==1.6.1
+sentencepiece==0.1.96
+accelerate
 numpy
 joblib==1.1.1
 pandas
@@ -26,26 +31,4 @@ demoji
 transformers
 farasapy==0.0.14
 pyarabic==0.6.14
-<<<<<<< HEAD
-<<<<<<< HEAD
-#accelerate==0.4.0 #--upgrade
-=======
--e git clone https://github.com/aub-mind/arabert
-emoji==1.6.1
-sentencepiece==0.1.96
-transformers accelerate
--e git+https://github.com/huggingface/accelerate
-accelerate==0.4.0 --upgrade
-fastapi
-python-multipart
->>>>>>> origin/main
-=======
 
->>>>>>> d641b3903bc95a737273808b1542f855dac69eba
-
-git+https://github.com/aub-mind/arabert
-emoji
-sentencepiece==0.1.96
-# transformers
-accelerate
-git+https://github.com/huggingface/accelerate
