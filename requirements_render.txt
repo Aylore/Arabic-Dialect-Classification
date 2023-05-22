@@ -3,7 +3,7 @@ fastapi
 python-multipart
 uvicorn
 Jinja2
-sklearn
+scikit-learn
 joblib
 nltk
 tensorflow
