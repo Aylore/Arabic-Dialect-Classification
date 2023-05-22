@@ -10,7 +10,7 @@ This repository contains the code and resources for a project focused on classif
 
 
 # Dataset
-The dataset used for this project consists of a large collection of Arabic tweets, each labeled with the corresponding dialect. The tweets cover a wide range of topics and are written in various Arabic dialects, including but not limited to Egyptian, Levantine, Gulf, and Maghrebi dialects.
+The dataset used for this project consists of a large collection of Arabic tweets, each labeled with the corresponding dialect. The tweets cover a wide range of topics and are written in various Arabic dialects, including but not limited to Egyptian, Libyan, Gulf, and Maghrebi dialects.
 
 # Project Structure
 The repository is organized as follows:
@@ -37,12 +37,12 @@ To get started with the project, follow these steps:
 
 Clone the repository:
 
-- git clone https://github.com/your-username/arabic-dialect-tweets-classification.git
+- git clone https://github.com/Aylore/Arabic-Dialect-Classification
 
 Install the required dependencies. It is recommended to set up a virtual environment for this project:
 
 
-- cd arabic-dialect-tweets-classification
+- cd Arabic-Dialect-Classification
 - pip install -r requirements.txt
 
 Explore the notebooks/ directory to understand the project workflow and learn about the data preprocessing and model training processes.
@@ -66,9 +66,11 @@ In this project we used variety of models with different preprocessing technique
 
 | Model         | F1_macro_val  | accuracy_val  |
 | ------------- |:-------------:| -----:        |
+|      ML       | 0.80          |    0.83 	|
 |    Arabert    | 0.86          |    0.87  	|
-| 	DL      | 0.81          |    0.86	|
-| 	ML      | 0.86          |    0.86 	|
+|      RNN      | 0.81          |    0.84	|
+|      GRU      | 0.83          |    0.86 	|
+|      LSTM     | 0.83          |    0.86 	|
 
 
 
@@ -104,8 +106,7 @@ The combination of Render and FastAPI made the deployment process efficient and 
 
 
 
-### Check it out here:
-https://arabic-dialect-classification-ai-mansoura.onrender.com/
+
 
 # Contributing
 Contributions to this project are welcome.

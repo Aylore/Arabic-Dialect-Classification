@@ -1,3 +1,4 @@
+import joblib
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.utils import to_categorical
@@ -11,6 +12,8 @@ def wrangle_dl(df):
     le = LabelEncoder()
     y_train = le.fit_transform(y_train)
     y_test = le.transform(y_test)
+
+    joblib.dump(le.classes_, 'models/dl_labels.pickle')
 
     tok = Tokenizer(num_words=MAX_WORDS)
     tok.fit_on_texts(X_train)

@@ -1,29 +1,39 @@
 import re
 import pandas as pd
-import demoji
+from string import punctuation
+import pyarabic.araby as araby
+from .const import STOP_WORDS
 
 
-def remove_urls(text):
-    return re.sub(r'http\S+', '', text)
-    
-
-def remove_emj(text):
-  demoji.download_codes()
-  return demoji.replace(text, '')
-
-def remove_user(text: str) -> str:
-    return re.sub(r"@\w+", " ", text)
+def replace_punctuation(text: str) -> str:
+    added_punctuation = punctuation + "؟،"
+    return re.sub(rf"[{added_punctuation}]", " ", text)
 
 
-def replace_spaces(text: str) -> str:
-    return re.sub(r"\s+", " ", str(text))
+def remove_arabic_diatrics(text: str) -> str:
+    text = araby.strip_tashkeel(text)
+    text = araby.normalize_ligature(text)
+    return text
+
+
+def keep_arabic(text: str) -> str:
+    return re.sub(r"[^\u0600-\u06FF ]+", " ", text)
+
+
+def remove_stop_words(text: str) -> str:
+    return " ".join(word for word in text.split() if word not in STOP_WORDS)
+
+
+def replace_repeated_chars(text: str) -> str:
+    return re.sub(r"(\w)\1{2,}", r"\1\1", text)
 
 
 def preprocess(text: str) -> str:
-    text = remove_urls(text)
-    text = remove_emj(text)
-    text = remove_user(text)
-    text = replace_spaces(text)
+    text = replace_punctuation(text)
+    text = remove_arabic_diatrics(text)
+    text = keep_arabic(text)
+    text = remove_stop_words(text)
+    text = replace_repeated_chars(text)
     return text
 
 

@@ -4,6 +4,7 @@ import tensorflow as tf
 tf.keras.utils.set_random_seed(42)
 import tensorflow_addons as tfa
 from sklearn.svm import LinearSVC
+from sklearn.naive_bayes import ComplementNB
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from utils import fetch_data
@@ -23,8 +24,8 @@ from utils.const import (
 
 def fit_ml(df):
     X_train, X_test, y_train, y_test = fetch_data.split_data(df)
-    final_model = LinearSVC(random_state=42)
-    pipe = Pipeline([("Vectorizer", TfidfVectorizer()), ("classifier", LinearSVC())])
+    final_model = ComplementNB(alpha=0.3)
+    pipe = Pipeline([("Vectorizer", TfidfVectorizer()), ("classifier", final_model)])
     pipe.fit(X_train, y_train)
     save_ml_model(pipe, ML_MODEL_PATH)
     return pipe
@@ -43,8 +44,8 @@ def fit_dl(X_train_padded, X_test_padded, y_train, y_test):
     model = tf.keras.models.Sequential(
         [
             tf.keras.layers.Embedding(MAX_WORDS, 64, input_length=INPUT_LENGTH),
-            tf.keras.layers.GRU(64),
-            # tf.keras.layers.Dense(64, activation="relu"),
+            tf.keras.layers.LSTM(64),
+            tf.keras.layers.Dense(64, activation="relu"),
             tf.keras.layers.Dense(NUM_CLASSES, activation="softmax"),
         ]
     )

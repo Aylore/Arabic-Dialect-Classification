@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from src.evaluate import predict_ml
 import numpy as np
 
 
@@ -43,21 +44,20 @@ async def clear(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "text": ""})
 
 def predict_label(text):
-    # Dummy prediction logic
-    model_prediction = np.random.choice(["SD","LB","EG","MA", "LY"]) #Put model here
+    model_prediction, predict_probabiltiy = predict_ml(text)
     
     dict_ = {"SD":"Sudanese - سودانية 🇸🇩",
-             "LB":"Libyan - ليبية 🇱🇾",
+             "LB":"Lebanese - لبنانية 🇱🇧",
              "EG":"Egyptian - مصرية 🇪🇬",
-             "MA":"moroccian - مغربية 🇲🇦",
-             "LY":"Lebanese -لبنانية 🇱🇧"}
+             "MA":"Moroccian - مغربية 🇲🇦",
+             "LY":"Libyan - ليبية 🇱🇾"} 
     
-    SD_score = np.random.rand() * 100
-    LB_score = np.random.rand() * 100
-    EG_score = np.random.rand() * 100
-    MA_score = np.random.rand() * 100
-    LY_score = np.random.rand()* 100
+    SD_score = predict_probabiltiy['SD']
+    LB_score = predict_probabiltiy['LB']
+    EG_score = predict_probabiltiy['EG']
+    MA_score = predict_probabiltiy['MA']
+    LY_score = predict_probabiltiy['LY']
 
-    return dict_[model_prediction], SD_score, LB_score, EG_score, MA_score, LY_score
+    return dict_[model_prediction[0]], SD_score, LB_score, EG_score, MA_score, LY_score
 
 # to run the app: uvicorn deployment.app:app --reload
