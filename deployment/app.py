@@ -48,10 +48,10 @@ def predict_label(text):
     model_prediction, predict_probabiltiy = predict_ml(text)
     
     dict_ = {"SD":"Sudanese - سودانية 🇸🇩",
-             "LB":"Libyan - ليبية 🇱🇾",
+             "LB":"Lebanese - لبنانية 🇱🇧",
              "EG":"Egyptian - مصرية 🇪🇬",
              "MA":"moroccian - مغربية 🇲🇦",
-             "LY":"Lebanese -لبنانية 🇱🇧"}
+             "LY":"Libyan - ليبية 🇱🇾"} 
     
     SD_score = predict_probabiltiy['SD']
     LB_score = predict_probabiltiy['LB']

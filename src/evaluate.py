@@ -23,17 +23,18 @@ from .train import load_ml_model, load_dl_model
 def eval_ml(path=ML_MODEL_PATH):
     model = load_ml_model(path)
     y_pred = model.predict(X_test)
-    print(f"Testing ML:\nAccuracy: {accuracy_score(y_test, y_pred)}")
-    print(f"Macro F1 score: {f1_score(y_test, y_pred, average='macro')}")
+    accuracy = accuracy_score(y_test, y_pred)
+    macro_f1_score = f1_score(y_test, y_pred, average="macro")
+    print(f"Testing ML:\nAccuracy: {accuracy}")
+    print(f"Macro F1 score: {macro_f1_score}")
+    return accuracy, macro_f1_score
 
 
 def eval_dl(X_test, y_test, path=DL_MODEL_PATH):
     model = load_dl_model(path)
-    print(
-        "Testing DL:\nAccuray: {}\nMacro F1 Score: {}".format(
-            *model.evaluate(X_test, y_test)[1:]
-        )
-    )
+    accuracy, macro_f1_score = model.evaluate(X_test, y_test)[1:]
+    print("Testing DL:\nAccuray: {accuracy}\nMacro F1 Score: {macro_f1_score}")
+    return accuracy, macro_f1_score
 
 
 def predict_ml_raw(sentence: str, path=ML_MODEL_PATH):
@@ -42,7 +43,7 @@ def predict_ml_raw(sentence: str, path=ML_MODEL_PATH):
     text = pd.DataFrame([sentence], columns=["text"])
     predict_label = model.predict(text)[0]
     predict_probabiltiy = {
-        country: prob
+        country: prob * 100
         for country, prob in zip(model.classes_, model.predict_proba(text)[0])
     }
     print(f"Dialect Prediction: {predict_label}\n Probabily: {predict_probabiltiy}")
@@ -54,7 +55,7 @@ def predict_ml(sentence: str, path=ML_MODEL_PATH):
     model = load_ml_model(path)
     predict_label = model.predict([sentence])
     predict_probabiltiy = {
-        country: prob
+        country: prob * 100
         for country, prob in zip(model.classes_, model.predict_proba([sentence])[0])
     }
     # print(f"Dialect Prediction: {predict_label}\n Probabily: {predict_probabiltiy}")
@@ -67,9 +68,10 @@ def predict_dl(sentence: str, path=DL_MODEL_PATH):
     tokenizer.fit_on_texts([sentence])
     input_seq = tokenizer.texts_to_sequences([sentence])
     padded_seq = pad_sequences(input_seq, maxlen=MAX_SEQUENCE_LEN)
-    labels = joblib.load('models/dl_labels.pickle')
+    labels = joblib.load("models/dl_labels.pickle")
 
-    predict_probabiltiy = dict(zip(labels, model.predict(padded_seq)[0]))
+    _predict_probabiltiy = dict(zip(labels, model.predict(padded_seq)[0]))
+    predict_probabiltiy = {k: v * 100 for k, v in _predict_probabiltiy.items()}
     predict_label = max(predict_probabiltiy, key=predict_probabiltiy.get)
     print(f"Dialect Prediction: {predict_label}\n Probabily: {predict_probabiltiy}")
 
