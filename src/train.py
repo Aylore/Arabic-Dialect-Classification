@@ -10,11 +10,11 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from utils import fetch_data
 from utils.const import (
     MAX_WORDS,
-    INPUT_LENGTH,
+    MAX_SEQUENCE_LEN,
     NUM_CLASSES,
     EPOCHS,
     BATCH_SIZE,
-    MAX_SEQUENCE_LEN,
+    INPUT_LENGTH,
     ML_MODEL_PATH,
     SRNN_MODEL_PATH,
     DL_MODEL_PATH,

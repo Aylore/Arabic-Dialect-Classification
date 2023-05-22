@@ -15,8 +15,11 @@ from utils.const import (
     ML_MODEL_PATH,
     DL_MODEL_PATH,
     MAX_SEQUENCE_LEN,
+    INPUT_LENGTH,
     MAX_WORDS,
+    DL_LABELS_PATH
 )
+
 from .train import load_ml_model, load_dl_model
 
 
@@ -33,7 +36,7 @@ def eval_ml(path=ML_MODEL_PATH):
 def eval_dl(X_test, y_test, path=DL_MODEL_PATH):
     model = load_dl_model(path)
     accuracy, macro_f1_score = model.evaluate(X_test, y_test)[1:]
-    print("Testing DL:\nAccuray: {accuracy}\nMacro F1 Score: {macro_f1_score}")
+    print(f"Testing DL:\nAccuray: {accuracy}\nMacro F1 Score: {macro_f1_score}")
     return accuracy, macro_f1_score
 
 
@@ -58,7 +61,7 @@ def predict_ml(sentence: str, path=ML_MODEL_PATH):
         country: prob * 100
         for country, prob in zip(model.classes_, model.predict_proba([sentence])[0])
     }
-    # print(f"Dialect Prediction: {predict_label}\n Probabily: {predict_probabiltiy}")
+    # print(f"Dialect Prediction: {predict_label}\nProbabily: {predict_probabiltiy}")
     return predict_label, predict_probabiltiy
 
 
@@ -68,8 +71,7 @@ def predict_dl(sentence: str, path=DL_MODEL_PATH):
     tokenizer.fit_on_texts([sentence])
     input_seq = tokenizer.texts_to_sequences([sentence])
     padded_seq = pad_sequences(input_seq, maxlen=MAX_SEQUENCE_LEN)
-    labels = joblib.load("models/dl_labels.pickle")
-
+    labels = joblib.load(DL_LABELS_PATH)
     _predict_probabiltiy = dict(zip(labels, model.predict(padded_seq)[0]))
     predict_probabiltiy = {k: v * 100 for k, v in _predict_probabiltiy.items()}
     predict_label = max(predict_probabiltiy, key=predict_probabiltiy.get)

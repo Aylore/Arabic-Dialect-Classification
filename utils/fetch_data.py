@@ -5,19 +5,13 @@ from sklearn.model_selection import train_test_split
 
 
 def get_data() -> pd.DataFrame:
-    conn = sqlite3.connect("./data/dialects_database.db")
+    conn = sqlite3.connect("data/dialects_database.db")
     df_label = pd.read_sql_query("SELECT * FROM id_text", conn)
     df_target = pd.read_sql_query("SELECT * FROM id_dialect", conn)
     df = pd.merge(df_label, df_target, on="id")
     conn.close()
     return df
 
-def get_data_csv() -> pd.DataFrame():                                      ##### this function is bugged
-    ls = [row[1:] for row in csv.reader(open("./data/dialects.csv"))]
-    df = pd.DataFrame(ls)
-    df.columns = df.iloc[0]
-    df = df.drop(0, axis=0)
-    return df
 
 def split_data(df):
     X = df["text"]

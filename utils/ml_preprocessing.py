@@ -2,7 +2,10 @@ import re
 import pandas as pd
 from string import punctuation
 import pyarabic.araby as araby
-from .const import STOP_WORDS
+import nltk
+
+nltk.download("stopwords")
+STOP_WORDS = set(nltk.corpus.stopwords.words("arabic"))
 
 
 def replace_punctuation(text: str) -> str:

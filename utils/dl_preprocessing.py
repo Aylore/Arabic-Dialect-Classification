@@ -4,16 +4,19 @@ from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.utils import to_categorical
 from sklearn.preprocessing import LabelEncoder
 from .fetch_data import split_data
-from utils.const import MAX_SEQUENCE_LEN, MAX_WORDS
+from .const import MAX_WORDS, DL_LABELS_PATH, MAX_SEQUENCE_LEN
+from .ml_preprocessing import wrangle_ml
+
+
 
 def wrangle_dl(df):
-    X_train, X_test, y_train, y_test = split_data(df)
+    df_clean = wrangle_ml(df)
 
+    X_train, X_test, y_train, y_test = split_data(df_clean)
+    
     le = LabelEncoder()
     y_train = le.fit_transform(y_train)
     y_test = le.transform(y_test)
-
-    joblib.dump(le.classes_, 'models/dl_labels.pickle')
 
     tok = Tokenizer(num_words=MAX_WORDS)
     tok.fit_on_texts(X_train)
