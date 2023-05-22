@@ -66,23 +66,23 @@ SimpleRNN
 Dense(64)
 Dense(5)
 Optimizer=Adam , learning rate=0.003
-----------------------------
+<br/>
 GRU : 
 Embedding (64)
 GRU()
 Dense(64)
 Dense(5)
 Optimizer=Adam , learning rate=0.003
--------------------------------
+<br/>
 Simple RNN: 
 Embedding (64)
 LSTM()
 Dense(64)
 Dense(5)
 Optimizer=Adam , learning rate=0.003
--------------------------------
+<br/>
 Activation in dense layers : relu, softmax 
--------------------------------
+<br/>
 Batch size=64
 epochs=15
 
