@@ -60,7 +60,7 @@ The table below compares the performance of different models trained and evaluat
 
 In this project we used variety of models with different preprocessing techniques.
 
-- Tradional ML : we used a 
+
 
 
 
