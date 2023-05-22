@@ -10,7 +10,7 @@ This repository contains the code and resources for a project focused on classif
 
 
 # Dataset
-The dataset used for this project consists of a large collection of Arabic tweets, each labeled with the corresponding dialect. The tweets cover a wide range of topics and are written in various Arabic dialects, including but not limited to Egyptian, Levantine, Gulf, and Maghrebi dialects.
+The dataset used for this project consists of a large collection of Arabic tweets, each labeled with the corresponding dialect. The tweets cover a wide range of topics and are written in various Arabic dialects, including but not limited to Egyptian, Libyan, Gulf, and Maghrebi dialects.
 
 # Project Structure
 The repository is organized as follows:
