@@ -60,6 +60,31 @@ The table below compares the performance of different models trained and evaluat
 
 In this project we used variety of models with different preprocessing techniques.
 
+RNN: 
+Embedding (64)
+SimpleRNN
+Dense(64)
+Dense(5)
+Optimizer=Adam , learning rate=0.003
+----------------------------
+GRU : 
+Embedding (64)
+GRU()
+Dense(64)
+Dense(5)
+Optimizer=Adam , learning rate=0.003
+-------------------------------
+Simple RNN: 
+Embedding (64)
+LSTM()
+Dense(64)
+Dense(5)
+Optimizer=Adam , learning rate=0.003
+-------------------------------
+Activation in dense layers : relu, softmax 
+-------------------------------
+Batch size=64
+epochs=15
 
 
 
