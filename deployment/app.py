@@ -44,7 +44,6 @@ async def clear(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "text": ""})
 
 def predict_label(text):
-    # Dummy prediction logic
     model_prediction, predict_probabiltiy = predict_ml(text)
     
     dict_ = {"SD":"Sudanese - سودانية 🇸🇩",

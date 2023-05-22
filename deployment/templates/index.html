@@ -29,26 +29,26 @@
 </head>
 <body>
   <div class="bar-chart">
-    <div class="bar" style="{{ eg_width }}"></div>
     <div class="bar-label"> 
       <span class="Egyptian">Egyptian:</span> {{ EG_score }}
     </div>
-    <div class="bar" style="{{ lb_width }}"></div>
+    <div class="bar" style="{{ eg_width }}"></div>
     <div class="bar-label">
       <span class="Lebanese">Lebanese:</span> {{ LB_score }}
     </div>
-    <div class="bar" style="{{ ly_width }}"></div>
+    <div class="bar" style="{{ lb_width }}"></div>
     <div class="bar-label">
       <span class="Libyan">Libyan:</span> {{ LY_score }}
     </div>
-    <div class="bar" style="{{ ma_width }}"></div>
+    <div class="bar" style="{{ ly_width }}"></div>
     <div class="bar-label">
-      <span class="moroccian">moroccian:</span> {{ MA_score }}
+      <span class="Moroccian">Moroccian:</span> {{ MA_score }}
     </div>
-    <div class="bar" style="{{ sd_width }}"></div>
+    <div class="bar" style="{{ ma_width }}"></div>
     <div class="bar-label">
       <span class="Sudanese">Sudanese:</span> {{ SD_score }}
     </div>
+    <div class="bar" style="{{ sd_width }}"></div>
   </div>
 </body>
 {% else %}
