@@ -3,3 +3,10 @@ fastapi
 python-multipart
 uvicorn
 Jinja2
+scikit-learn
+joblib
+nltk
+tensorflow
+tensorflow_addons
+pandas
+scipy

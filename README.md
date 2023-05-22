@@ -128,9 +128,16 @@ To deploy our Arabic Dialect Tweets Classification project, we followed these st
 
 The combination of Render and FastAPI made the deployment process efficient and reliable, allowing us to easily share our Arabic Dialect Tweets Classification project with others.
 
+# Deployment interface
 
-
-
+<div align="center">
+  <img src="./assets/deployment1.png" alt="Image">
+</div>
+<br></br>
+<div align="center">
+  <img src="./assets/deployment2.png" alt="Image">
+</div>
+<br></br>
 
 # Contributing
 Contributions to this project are welcome.
