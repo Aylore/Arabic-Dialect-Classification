@@ -1,4 +1,7 @@
 from .fetch_data import split_data, get_data
+import nltk
+
+nltk.download("stopwords")
 
 EPOCHS = 5
 BATCH_SIZE = 32
@@ -6,6 +9,7 @@ MAX_WORDS = 10_000
 X_train, X_test, y_train, y_test = split_data(get_data())
 NUM_CLASSES = y_train.nunique()
 MAX_SEQUENCE_LEN = max(len(sentence) for sentence in X_train)
+STOP_WORDS = set(nltk.corpus.stopwords.words("arabic"))
 INPUT_LENGTH = MAX_SEQUENCE_LEN
 ML_MODEL_PATH = "models/ml_model.pkl"
 DL_MODEL_PATH = "models/LSTM"
