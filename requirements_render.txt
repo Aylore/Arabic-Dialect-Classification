@@ -9,3 +9,4 @@ nltk
 tensorflow
 tensorflow_addons
 pandas
+python3-scipy
