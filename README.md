@@ -1,4 +1,3 @@
-# Arabic-Dialect-Classification
 
 <div align="center">
   <img src="./assets/map.png" alt="Image">
@@ -61,7 +60,7 @@ The table below compares the performance of different models trained and evaluat
 In this project we used variety of models with different preprocessing techniques.
 
 RNN: 
-Embedding (64)
+Embedding(64)
 SimpleRNN
 Dense(64)
 Dense(5)
@@ -72,14 +71,14 @@ Embedding(64)
 GRU()
 Dense(64)
 Dense(5)
-Optimizer=Adam , learning rate= 0.001
+Optimizer=Adam , learning rate = 0.001
 <br/>
 Simple RNN: 
-Embedding (64)
+Embedding(64)
 LSTM()
 Dense(64)
 Dense(5)
-Optimizer=Adam , learning rate=0.001
+Optimizer=Adam , learning rate = 0.001
 <br/>
 Activation in dense layers : relu, softmax 
 <br/>
