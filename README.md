@@ -37,12 +37,12 @@ To get started with the project, follow these steps:
 
 Clone the repository:
 
-- git clone https://github.com/your-username/arabic-dialect-tweets-classification.git
+- git clone https://github.com/Aylore/Arabic-Dialect-Classification
 
 Install the required dependencies. It is recommended to set up a virtual environment for this project:
 
 
-- cd arabic-dialect-tweets-classification
+- cd Arabic-Dialect-Classification
 - pip install -r requirements.txt
 
 Explore the notebooks/ directory to understand the project workflow and learn about the data preprocessing and model training processes.
