@@ -1,4 +1,4 @@
-
+# Arabic Dialect Classification
 <div align="center">
   <img src="./assets/map.png" alt="Image">
 </div>
@@ -124,18 +124,18 @@ To deploy our Arabic Dialect Tweets Classification project, we followed these st
 
 3. Build and deploy the project: Render automatically triggered the deployment process whenever we pushed new code to the connected GitHub repository. The deployment process involved installing project dependencies, such as those specified in the `requirements_render.txt` file, and starting the FastAPI server.
 
-4. Accessing the deployed project: Once the deployment was complete, Render provided us with a unique URL where the Arabic Dialect Tweets Classification project was accessible. You can access the deployed project [here]: https://arabic-dialect-classification-ai-mansoura.onrender.com/ 
+4. Accessing the deployed project: Once the deployment was complete, Render provided us with a unique URL where the Arabic Dialect Tweets Classification project was accessible. You can access the deployed project here : https://arabic-dialect-classification-ai-mansoura.onrender.com/ 
 
 The combination of Render and FastAPI made the deployment process efficient and reliable, allowing us to easily share our Arabic Dialect Tweets Classification project with others.
 
 # Deployment interface
 
 <div align="center">
-  <img src="./assets/deployment1.png" alt="Image">
+  <img src="./assets/deployment1.PNG" alt="Image">
 </div>
 <br></br>
 <div align="center">
-  <img src="./assets/deployment2.png" alt="Image">
+  <img src="./assets/deployment2.PNG" alt="Image">
 </div>
 <br></br>
 
