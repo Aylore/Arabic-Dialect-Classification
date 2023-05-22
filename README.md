@@ -104,8 +104,7 @@ The combination of Render and FastAPI made the deployment process efficient and 
 
 
 
-### Check it out here:
-https://arabic-dialect-classification-ai-mansoura.onrender.com/
+
 
 # Contributing
 Contributions to this project are welcome.
