@@ -50,7 +50,7 @@ def predict_label(text):
     dict_ = {"SD":"Sudanese - سودانية 🇸🇩",
              "LB":"Lebanese - لبنانية 🇱🇧",
              "EG":"Egyptian - مصرية 🇪🇬",
-             "MA":"moroccian - مغربية 🇲🇦",
+             "MA":"Moroccian - مغربية 🇲🇦",
              "LY":"Libyan - ليبية 🇱🇾"} 
     
     SD_score = predict_probabiltiy['SD']
