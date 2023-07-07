@@ -5,7 +5,7 @@
 
 
 
-This repository contains the code and resources for a project focused on classifying Arabic  tweets dialect. The aim of the project is to develop a machine learning model that can accurately classify tweets written in different Arabic dialects.
+This repository contains the code and resources for a project focused on classifying Arabic tweets dialect. The aim of the project is to develop a machine learning model that can accurately classify tweets written in different Arabic dialects.
 
 
 # Dataset
